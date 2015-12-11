@@ -7,8 +7,8 @@ module.exports =
   .config(function ($stateProvider) {
     $stateProvider
     .state('masonry', {
-      url: '',
-      templateUrl: 'app/masonry/layout.html',
+      url: '/',
+      templateUrl: 'app/masonryExample/layout.html',
       controller: 'masonryController'
     });
   })
