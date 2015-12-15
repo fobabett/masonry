@@ -81,11 +81,11 @@ module.exports = /*@ngInject*/
     ];
 
     for(var i in $scope.pics) {
-      $scope.categories = $scope.pics[i].categories
+      $scope.categories = $scope.pics[i].categories;
     }
 
     $scope.refresh = function(){
       angularGridInstance.gallery.refresh();
-    }
+    };
 
   };
