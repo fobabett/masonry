@@ -2,4 +2,4 @@
 
 module.exports =
   angular.module('masonry.common.directives', []);
-  //.directive('fooDirective', require('./fooDirective'));
+  // .directive('masonry', require('./masonry'));

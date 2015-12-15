@@ -2,7 +2,6 @@
 
 module.exports =
   angular.module('masonry.masonryExample', [
-
   ])
   .config(function ($stateProvider) {
     $stateProvider

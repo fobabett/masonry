@@ -1,3 +1,12 @@
 <div>
-  <img ng-repeat='image in images' src="{{image.url}}" alt="">
+
+  <select ng-model='filter' name="filter" id="" ng-options='c.value for c in categories track by c.value'>
+  </select>
+
+  <ul class="dynamic-grid" angular-grid="pics" grid-width="300" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="true" >
+    <li data-ng-repeat="pic in pics | filter: filter.value" class="grid">
+        <img src="{{pic.url}}" class="grid-img"/>
+    </li>
+  </ul>
+
 </div>
