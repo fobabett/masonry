@@ -1,10 +1,16 @@
 <div>
 
-  <select ng-model='filter' name="filter" id="" ng-options='c.value for c in categories track by c.value'>
-  </select>
+  <div>
+    <ul id='filter'> 
+      <li>Type</li>
+      <li class='filter-type' ng-click='commercialFilter()' ng-class='{"selected-tag": commercial == "commercial"}'>Commercial</li>
+      <li class='filter-type' ng-click='narrativeFilter()' ng-class='{"selected-tag": narrative == "narrative"}'>Narrative</li>
+      <li class='filter-type' ng-click='creativeFilter()' ng-class='{"selected-tag": creative == "creative"}'>Creative</li>
+    </ul>
+  </div>
 
-  <ul class="dynamic-grid" angular-grid="pics" grid-width="300" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="true" >
-    <li data-ng-repeat="pic in pics | filter: filter.value" class="grid">
+  <ul class="dynamic-grid" angular-grid="pics" grid-width="250" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="true" >
+    <li data-ng-repeat="pic in pics | filter: commercial | filter: narrative | filter: creative" class="grid">
         <img src="{{pic.url}}" class="grid-img"/>
     </li>
   </ul>

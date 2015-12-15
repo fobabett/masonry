@@ -5,84 +5,122 @@ module.exports = /*@ngInject*/
 
     $scope.pics = [
       {
+        name: 'one of a kind',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'cute'},
-          {value: 'meh'}
-        ] 
+        types: [
+          {value: 'commercial'},
+          {value: 'narrative'}
+        ]
       },
       {
+        name: 'kitty cat',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'funny'}
-        ] 
+        types: [
+          {value: 'commercial'}
+        ]
       },
       {
+        name: 'awesomeness',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'action'}
-        ] 
+        types: [
+          {value: 'creative'},
+          {value: 'narrative'}
+        ]
       },
       {
+        name: 'blah',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'cute'}
-        ] 
+        types: [
+          {value: 'narrative'}
+        ]
       },
       {
+        name: 'dsfdsf',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'meme'},
-          {value: 'doge'}
-        ] 
+        types: [
+          {value: 'creative'},
+          {value: 'commercial'}
+        ]
       },
       {
+        name: 'boooo',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'blah'}
-        ] 
+        types: [
+          {value: 'creative'},
+          {value: 'narrative'},
+          {value: 'commercial'}
+        ]
       },
       {
+        name: 'one of a kind',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'cute'}
-        ] 
+        types: [
+          {value: 'commercial'},
+          {value: 'narrative'}
+        ]
       },
       {
+        name: 'kitty cat',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'blah'}
-        ] 
+        types: [
+          {value: 'creative'}
+        ]
       },
       {
+        name: 'awesomeness',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'funny'}
-        ] 
+        types: [
+          {value: 'creative'},
+          {value: 'narrative'}
+        ]
       },
       {
+        name: 'blah',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'blah'}
-        ] 
+        types: [
+          {value: 'narrative'}
+        ]
       },
       {
+        name: 'dsfdsf',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'blah'}
-        ] 
+        types: [
+          {value: 'commercial'},
+          {value: 'creative'}
+        ]
       },
       {
+        name: 'boooo',
         url: 'http://placehold.it/300x200',
-        categories: [
-          {value: 'meh'}
-        ] 
+        type: ['commercial', 'creative', 'narrative']
       }
     ];
 
-    for(var i in $scope.pics) {
-      $scope.categories = $scope.pics[i].categories;
-    }
+    $scope.commercial = '';
+    $scope.narrative = '';
+    $scope.creative = '';
+
+    $scope.commercialFilter = function() {
+      if ($scope.commercial === '') {
+        $scope.commercial = 'commercial';
+      } else {
+        $scope.commercial = '';
+      }
+    };
+    $scope.narrativeFilter = function() {
+      if ($scope.narrative === '') {
+        $scope.narrative = 'narrative';
+      } else {
+        $scope.narrative = '';
+      }
+    };
+    $scope.creativeFilter = function() {
+      if ($scope.creative === '') {
+        $scope.creative = 'creative';
+      } else {
+        $scope.creative = '';
+      }
+    };
 
     $scope.refresh = function(){
       angularGridInstance.gallery.refresh();
